@@ -1,86 +1,45 @@
- * { margin: 0; padding: 0; box-sizing: border-box; }
+@charset "UTF-8";
+*{
+  padding: 0px;
+  margin: 0px;
+  background-color: rgb(80, 80, 80);
+  box-sizing:  border-box; 
+}
 
-  body, html {
-    height: 100%;
-    overflow: hidden; /* só libera scroll depois */
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    color: #333;
-  }
+body, html{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+}
 
-  /* Preloader */
-  #preloader {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
+.preloader{
+  width: 80%;
+  max-width: 400px;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
 
-  .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #fff;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-  }
+.bar{
+  width: 0%;
+  height: 100%;
+  background:  linear-gradient(to bottom, rgb(41, 41, 41), rgb(92, 92, 92));
+  animation: loading 6s forwards;
+  flex-flow:nowrap;
+}
 
-  .spinner {
-    border: 6px solid rgba(255,255,255,0.2);
-    border-top: 6px solid #00c3ff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 2s linear infinite;
-    margin-bottom: 20px;
-  }
+@keyframes loading{
+  from { width: 0%; }
+  to { width: 100%; }
+}
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  .typing {
-    color: #fff;
-    font-size: 1.2rem;
-    border-right: 2px solid #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    min-height: 1.5em;
-  }
-
-  /* Telas que vão rasgar */
-  .preloader-top, .preloader-bottom {
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: #000;
-    z-index: 9998;
-    transition: transform 2s ease-in-out;
-  }
-
-  .preloader-top { top: 0; }
-  .preloader-bottom { bottom: 0; }
-
-  /* Rasgo ativado */
-  .rasgando .preloader-top { transform: translateY(-100%); }
-  .rasgando .preloader-bottom { transform: translateY(100%); }
-
-  /* Conteúdo do site */
-  main {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-    text-align: center;
-    padding: 50px 20px;
-  }
-
-  body.showContent main {
-    opacity: 1;
-    transform: translateY(0);
-  }
+main{
+  display: none;
+  color: aliceblue;
+  text-align: center;
+  font-family: sans-serif;
+}
