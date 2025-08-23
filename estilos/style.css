@@ -1,49 +1,96 @@
 @charset "UTF-8";
 
-
 body, html{
+  margin: 0;
+  padding: 0;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #111;
-}
-
-.preloader{
-  width: 80%;
-  max-width: 400px;
-  height: 20px;
-  background: #636363;
-  border-radius: 10px;
+  background: #111;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
-  position: relative;
-  
 }
 
-.bar{
-  width: 100%;
-  height: 2%;
-  background:  linear-gradient(to bottom, rgb(41, 41, 41), rgb(104, 104, 104));
-  animation: loading 6s forwards;
-  flex-flow:nowrap;
-}
-
-@keyframes loading{
-  from { width: 0%; }
-  to { width: 100%; }
-}
-
-main{
-  width: 400px;
-  display: none;
-  color: aliceblue;
+#preloader{
   text-align: center;
-  font-family: sans-serif;
+   position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1000;
+}
+.logo{
+  width: 150px;
+  margin-bottom: 20px;
+}
+.barra{
+  width: 300px;
+  height: 12px;
+  background: rgb(75, 75, 75);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 auto 15px;
+}
+.preenchimento{
+  height: 100%;
+  width: 0;
+  background: rgb(33, 102, 148);
+  animation: carregar 4s linear forwards;
 }
 
-section{
-  background-color: rgb(11, 67, 117);
-  width: 100px;
-  height: 100px;
+@keyframes carregar{
+  from {width: 0;}
+  to {width: 100%;}
 }
 
+.texto{
+  display: inline-block;
+  border-right: 1px solid rgb(158, 158, 158);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100vw;
+  animation: digitar 3s steps(20, end) forwards, cursorPisca 0.7s steps(1) infinite;
+}
+
+@keyframes digitar{
+  from {width: 0;}
+  to {width: 18ch;}
+}
+
+@keyframes cursorPisca{
+  50%{border-color: transparent ;}
+}
+
+#conteudo{
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.animacao-site{
+  display: block;
+  animation: abrirSite 2s ease forwards;
+}
+
+@keyframes abrirSite{
+ 0%{
+  opacity: 0;
+  transform: scaleY(0) translateY(0);
+ }
+ 50%{
+  opacity: 1;
+  transform: scaleY(1.2);
+ }
+ 100%{
+  opacity: 1;
+  transform: scaleY(1) translateY(0);
+ }
+}

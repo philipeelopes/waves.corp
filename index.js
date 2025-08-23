@@ -1,7 +1,8 @@
-const preloader = document.querySelector('.preloader');
-const main = document.querySelector('main');
+const barra = document.querySelector('.preenchimento');
+barra.addEventListener('animationend', () =>{
+  document.getElementById('preloader').style.display = 'none';
+  document.getElementById('conteudo').style.display = 'block';
 
-setTimeout(() => {
-  preloader.style.display = 'none'
-  main.style.display = 'block'
-}, 6000);
+  const conteudo = document.getElementById('conteudo');
+  conteudo.classList.add('animacao-site');
+});
