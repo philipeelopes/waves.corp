@@ -25,11 +25,19 @@ body, html{
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      padding-bottom: 50px;
       z-index: 1000;
 }
 .logo{
-  width: 150px;
+  width: 320px;
+  height: 60px;
+  object-fit: cover;
   margin-bottom: 20px;
+  background-color: #111;
+  align-items: flex-end;
+
+  
+  
 }
 .barra{
   width: 300px;
