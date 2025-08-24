@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 body, html{
   margin: 0;
   padding: 0;
@@ -10,7 +11,7 @@ body, html{
   background: #111;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
+  
 }
 
 #preloader{
@@ -101,4 +102,38 @@ body, html{
   opacity: 1;
   transform: scaleY(1) translateY(0);
  }
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.menu{
+  padding-top: 1000px;
+  background-color: aliceblue;
+}
+
+
+
+nav > ul{
+  width: 200px;
+  height: 200px;
+}
+
+.logoMenu{
+width: 200px;
+height: 200px;
+}
+
+.video{
+  width: 200px;
+  height: 200px;
+
+}
+.cards img{
+  width: 400px;
+  height: 400px;
+  
 }
